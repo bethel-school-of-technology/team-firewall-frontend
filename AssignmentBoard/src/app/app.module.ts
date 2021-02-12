@@ -11,6 +11,9 @@ import { SignupbankerComponent } from './components/signupbanker/signupbanker.co
 import { SignupadminComponent } from './components/signupadmin/signupadmin.component';
 import { BankerloginComponent } from './components/bankerlogin/bankerlogin.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { ListAllLoansComponent } from './components/list-all-loans/list-all-loans.component';
+import { LoansForPurchaseComponent } from './component/loans-for-purchase/loans-for-purchase.component';
+import { LoansForSaleComponent } from './components/loans-for-sale/loans-for-sale.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
     SignupbankerComponent,
     SignupadminComponent,
     BankerloginComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    ListAllLoansComponent,
+    LoansForPurchaseComponent,
+    LoansForSaleComponent
   ],
   imports: [
     BrowserModule,

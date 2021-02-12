@@ -10,6 +10,7 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 
 
 
+
 const routes: Routes = [
 
   { path: "signup/banker", component: SignupbankerComponent},
@@ -23,8 +24,10 @@ const routes: Routes = [
   
   { path: "login/admin", component: AdminloginComponent },
     //Admin login page
-  
+
   { path: "", redirectTo: "signup/banker", pathMatch: "full"}
+  
+  
 ];
 
 @NgModule({
