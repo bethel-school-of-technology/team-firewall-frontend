@@ -1,0 +1,22 @@
+{
+    "admin": [
+        {
+            "FirstName": "Daniel",
+            "LastName": "Mora",
+            "Email": "dan.mora@admintest.com",
+            "AdminId": 1
+        },
+        {
+            "FirstName": "Zach",
+            "LastName": "Mead",
+            "Email": "zac.mead@admintest.com",
+            "AdminId": 2
+        },
+        {
+            "FirstName": "Priscilla",
+            "LastName": "Sherley",
+            "Email": "zilla.sherley@admintest.com",
+            "AdminId": 3
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "bankers": [
+        {
+            "FirstName": "Daniel",
+            "LastName": "Mora",
+            "Email": "dan.mora@test.com",
+            "BankerId": 1990
+        },
+        {
+            "FirstName": "Zach",
+            "LastName": "Mead",
+            "Email": "zac.mead@test.com",
+            "BankerId": 1991
+        },
+        {
+            "FirstName": "Priscilla",
+            "LastName": "Sherley",
+            "Email": "zilla.sherley@test.com",
+            "BankerId": 1992
+        }
+    ]
+}
