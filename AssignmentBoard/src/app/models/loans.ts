@@ -7,13 +7,12 @@ export class Loans {
     Address: string;
     LoanId!: number;
     AccountNumber:string;
-    BankId!: foreignType ;
     ForSale: Boolean;
 
     constructor() { 
     this.FirstName = "";
     this.LastName = "";
-    this.LoanAmount = ;
+    this.LoanAmount = 0;
     this.Address = "";
     this.AccountNumber ="";
     this.ForSale= true,false;

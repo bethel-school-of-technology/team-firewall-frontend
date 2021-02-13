@@ -8,9 +8,6 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 
 
 
-
-
-
 const routes: Routes = [
 
   { path: "signup/banker", component: SignupbankerComponent},

@@ -14,6 +14,12 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 import { ListAllLoansComponent } from './components/list-all-loans/list-all-loans.component';
 import { LoansForPurchaseComponent } from './component/loans-for-purchase/loans-for-purchase.component';
 import { LoansForSaleComponent } from './components/loans-for-sale/loans-for-sale.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { BankPortfolioComponent } from './components/bank-portfolio/bank-portfolio.component';
+import { SupportComponent } from './component/support/support.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CareersComponent } from './components/careers/careers.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { LoansForSaleComponent } from './components/loans-for-sale/loans-for-sal
     AdminloginComponent,
     ListAllLoansComponent,
     LoansForPurchaseComponent,
-    LoansForSaleComponent
+    LoansForSaleComponent,
+    HomepageComponent,
+    BankPortfolioComponent,
+    SupportComponent,
+    ContactComponent,
+    AboutUsComponent,
+    CareersComponent
   ],
   imports: [
     BrowserModule,
