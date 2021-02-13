@@ -1,4 +1,20 @@
-<p>homepage works!</p>
+<h3>ASSIGNMENT BOARD</h3>
 // loan.firstname loan.lastname  loan.loanAmount loan.name (ngfor) loan of loans 
 // for sale is true and deleted is false 
 // bank name . userid 
+
+<h2>Loans</h2>
+<ul class="loans">
+    <li *ngFor="let loan of loans"></li>
+
+  <div>
+      <li>id:{{.id}}</li>
+      <li>first name:{{loan.firstName}}</li>
+      <li>last name:{{loan.lastName}}</li>
+      <li>amount:{{loan.loanAmount}}</li>
+      <li>loan name:{{loan.name}}</li> 
+  </div>
+</ul>
+
+
+
