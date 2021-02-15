@@ -14,9 +14,6 @@ import { FormsModule } from '@angular/forms';
 
 
 
-
-
-
 const routes: Routes = [
 
   { path: "signup/banker", component: SignupbankerComponent},
