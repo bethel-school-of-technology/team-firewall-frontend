@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bankers } from 'src/app/models/bankers';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-signupbanker',
@@ -10,13 +11,16 @@ export class SignupbankerComponent implements OnInit {
   
   newBanker: Bankers = new Bankers();
 
-  constructor() { }
+  constructor( private myUserSerice: UsersService) { }
 
   ngOnInit(): void {
   }
 
-  signupBankers() {
-    console.log(this.newBanker)
+  signupBanker() {
+    console.log(this.newBanker);
+    this.myUserSerice.SignupBankers(this.newBanker).subscribe(myResponseObject => {
+      console.log(myResponseObject);
+    })
   }
 
 }
