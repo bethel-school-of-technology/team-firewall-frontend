@@ -10,18 +10,18 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./signupbanker.component.css']
 })
 export class SignupbankerComponent implements OnInit {
-
+  
   newBank: Bank = new Bank();
   newBanker: Banker = new Banker();
 
-  constructor( private myUserSerice: UserService) { }
+  constructor(private UserService: UserService) { }
 
   ngOnInit(): void {
   }
 
   signupBanker() {
     console.log(this.newBanker, this.newBank);
-    this.myUserSerice.signupBankers(this.newBanker, this.newBank).subscribe(myResponseObject => {
+    this.UserService.signupBankers(this.newBanker, this.newBank).subscribe(myResponseObject => {
       console.log(myResponseObject);
     })
   }

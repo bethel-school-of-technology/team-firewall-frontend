@@ -1,0 +1,9 @@
+h3{
+    text-align: center;
+}
+div {
+    max-width: auto;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(32, 200, 32);
+}
