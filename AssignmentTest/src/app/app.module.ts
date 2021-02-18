@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupbankerComponent } from './components/signupbanker/signupbanker.component';
+import { BkrloginComponent } from './components/bkrlogin/bkrlogin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupbankerComponent
+    SignupbankerComponent,
+    BkrloginComponent
   ],
   imports: [
     BrowserModule,

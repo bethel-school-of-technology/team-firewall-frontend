@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Banker } from '../models/banker';
 import { Observable } from 'rxjs';
+
+import { Banker } from '../models/banker';
 import { Bank } from '../models/bank';
+
 
 @Injectable({
   providedIn: 'root'

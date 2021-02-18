@@ -2,7 +2,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+
 import { SignupbankerComponent } from './components/signupbanker/signupbanker.component';
+
 
 
 const routes: Routes = [
@@ -11,8 +13,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)
+  imports:
+    [RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule
   ],
-  exports: [RouterModule]
+  exports:
+    [ RouterModule
+    ]
 })
 export class AppRoutingModule { }
