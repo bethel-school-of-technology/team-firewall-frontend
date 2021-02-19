@@ -25,6 +25,10 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/signup/banker", request);
   }
 
+  getBanks(): Observable<any>{
+    return this.myHttp.get(this.serverURL + "/findbanks");
+  }
+
   loginBanker(email: string, password: string): Observable<any>{
     let bankerInfo = {
       email,
