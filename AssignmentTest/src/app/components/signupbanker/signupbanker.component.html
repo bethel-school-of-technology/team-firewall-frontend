@@ -10,7 +10,7 @@
     </div>
     <div>
         <span>Last Name</span>
-        <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName"> 
+        <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName">
     </div>
     <div>
         <span>Email</span>
@@ -21,10 +21,17 @@
         <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newBanker.Password">
     </div>
     <div>
-        <span>Bank</span>
-        <input placeholder="Enter Bank" type="text" name="bankName" [(ngModel)]="newBank.Name">
+        <span for="bank">Bank</span>
+        <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
+            <option *ngFor="let bank of banks">
+                {{bank.Name}}
+            </option>
+        </select>
     </div>
-    <button type="submit">
-        Sign Up
-    </button>
+    <div>
+        <button type="submit">
+            Sign Up
+        </button>
+    </div>
+
 </form>
