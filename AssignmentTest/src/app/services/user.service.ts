@@ -13,6 +13,15 @@ export class UserService {
   serverURL: string = 'http://localhost:3000'
   
   signupBankers(newbanker: Banker, newBank: Bank): Observable<any>{
-    return this.myHttp.post(this.serverURL + "/signup/banker", {newbanker, newBank});
+    var request = {
+      firstName: newbanker.FirstName,
+      lastName: newbanker.LastName,
+      email: newbanker.Email,
+      password: newbanker.Password,
+      bankName: newBank.Name
+    }; 
+    return this.myHttp.post(this.serverURL + "/signup/banker", request);
   }
+
+  
 }
