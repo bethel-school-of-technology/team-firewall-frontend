@@ -21,9 +21,9 @@ export class SignupadminComponent implements OnInit {
     console.log(this.newAdmin);
     this.UserService.signupAdmins(this.newAdmin).subscribe(myResponseObject =>{
       console.log(myResponseObject);
-      if(myResponseObject === 200) {
+      if(myResponseObject.status === 200) {
         window.alert(myResponseObject.message);
-        //this.myRouter.navigate(["login/admin"]);
+        this.myRouter.navigate(["login/admin"]);
       } else {
         window.alert(myResponseObject.message);
       }

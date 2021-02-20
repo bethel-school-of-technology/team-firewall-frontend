@@ -30,8 +30,14 @@ export class UserService {
     return this.myHttp.get(this.serverURL + "/findbanks");
   }
 
-  signupAdmins(newadmin: Admin): Observable<any>{
-    return this.myHttp.post(this.serverURL + "/signup/admin", newadmin);
+  signupAdmins(newAdmin: Admin): Observable<any>{
+    var request = {
+      firstName: newAdmin.FirstName,
+      lastName: newAdmin.LastName,
+      email: newAdmin.Email,
+      password: newAdmin.Password
+    }
+    return this.myHttp.post(this.serverURL + "/signup/admin", request);
   }
 
   loginBanker(email: string, password: string): Observable<any>{

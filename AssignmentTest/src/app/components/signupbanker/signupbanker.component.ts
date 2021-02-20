@@ -32,7 +32,7 @@ export class SignupbankerComponent implements OnInit {
     console.log(this.newBanker, this.newBank);
     this.UserService.signupBankers(this.newBanker, this.newBank).subscribe(myResponseObject => {
       console.log(myResponseObject);
-      if(myResponseObject === 200) {
+      if(myResponseObject.status === 200) {
         window.alert(myResponseObject.messsage);
         this.myRouter.navigate(["login/banker"]);
       } else {
