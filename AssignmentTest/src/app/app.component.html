@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+<div id="navbar">
+    <a class="active" href="/home/employee/id">Home</a>
+        <a href="bank/portfolio/id">Portfolio</a>
+        <a href="">Loans</a>
+        <a href="">Contact</a>
+        <a href="">Support </a>
+        <a href="">About Us </a>
+        <a href="">Careers</a>
+  </div>
