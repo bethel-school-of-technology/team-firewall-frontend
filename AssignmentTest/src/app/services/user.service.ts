@@ -33,7 +33,10 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/login/banker", bankerInfo);
   }
 
-  getBankerProfile(): Observable<any>{
-    return this.myHttp.get(this.serverURL + "/profile/:id");
+  getBankerPortfolio(): Observable<any>{
+    let myHeaders = {
+      authService: localStorage.getItem("vaultToken")
+    }
+    return this.myHttp.get(this.serverURL+"/portfolio/:id", {headers: myHeaders});
   }
 }

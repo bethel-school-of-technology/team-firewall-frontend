@@ -7,7 +7,7 @@ import { SignupbankerComponent } from './components/signupbanker/signupbanker.co
 //import { SignUpAdminComponent } from './components/signupadmin/signupadmin.component';
 import { BkrloginComponent } from './components/bkrlogin/bkrlogin.component';
 //import { LoginAdminComponent } from './components/loginadmin/loginadmin.component';
-
+import { BkrportfolioComponent } from './components/bkrportfolio/bkrportfolio.component';
 
 const routes: Routes = [
   { path: "signup/banker", component: SignupbankerComponent },
@@ -22,7 +22,9 @@ const routes: Routes = [
   //{ path: "login/admin", component: LoginAdminComponent },
   //Admin Login page
   
-
+  { path: "portfolio/:id", component: BkrportfolioComponent },
+  //Banker Portfolio page
+  
 ];
 
 @NgModule({

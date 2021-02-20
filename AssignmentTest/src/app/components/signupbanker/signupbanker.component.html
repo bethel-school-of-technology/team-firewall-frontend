@@ -24,7 +24,13 @@
         <span>Bank</span>
         <input placeholder="Enter Bank" type="text" name="bankName" [(ngModel)]="newBank.Name">
     </div>
-    <button type="submit">
+    <!-- <div class="form-group">
+        <label for="bankList">Bank</label>
+        <select class="form-control" id="bankList" required>
+          <option *ngFor="bankList" [value]="pow">{{pow}}</option>
+        </select>
+      </div>  -->
+    <button type="submit" color="Primary" class="btn-block">
         Sign Up
     </button>
 </form>
