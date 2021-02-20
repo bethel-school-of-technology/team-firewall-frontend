@@ -1,0 +1,29 @@
+<hr>
+<h3>
+    Admin Sign Up
+</h3>
+<hr>
+<form (ngSubmit)='signupAdmin()'>
+    <div>
+        <span>First Name</span>
+        <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newAdmin.FirstName">
+    </div>
+    <div>
+        <span>Last Name</span>
+        <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newAdmin.LastName">
+    </div>
+    <div>
+        <span>Email</span>
+        <input placeholder="Email" type="text" name="email" [(ngModel)]="newAdmin.Email">
+    </div>
+    <div>
+        <span>Password</span>
+        <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newAdmin.Password">
+    </div>
+    <div>
+        <button type="submit">
+            Sign Up
+        </button>
+    </div>
+
+</form>

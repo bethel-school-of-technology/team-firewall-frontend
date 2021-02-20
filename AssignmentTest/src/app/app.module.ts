@@ -9,6 +9,8 @@ import { SignupbankerComponent } from './components/signupbanker/signupbanker.co
 import { BkrloginComponent } from './components/bkrlogin/bkrlogin.component';
 import { BkrportfolioComponent } from './components/bkrportfolio/bkrportfolio.component';
 import { AdminportfolioComponent } from './components/adminportfolio/adminportfolio.component';
+import { SignupadminComponent } from './components/signupadmin/signupadmin.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AdminportfolioComponent } from './components/adminportfolio/adminportfo
     SignupbankerComponent,
     BkrloginComponent,
     BkrportfolioComponent,
-    AdminportfolioComponent
+    AdminportfolioComponent,
+    SignupadminComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,
