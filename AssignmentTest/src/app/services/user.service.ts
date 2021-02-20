@@ -41,4 +41,9 @@ export class UserService {
     authService: localStorage.getItem("vaultToken")
     return this.myHttp.get(this.serverURL + "/portfolio/:id");
   }
+
+  getAdminPortfolio(): Observable<any>{
+    authService: localStorage.getItem("vaultToken")
+    return this.myHttp.get(this.serverURL + "portfolio/:id");
+  }
 }
