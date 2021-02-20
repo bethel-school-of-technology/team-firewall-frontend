@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SignupbankerComponent } from './components/signupbanker/signupbanker.component';
 import { BkrloginComponent } from './components/bkrlogin/bkrlogin.component';
 import { BkrportfolioComponent } from './components/bkrportfolio/bkrportfolio.component';
+import { AdminportfolioComponent } from './components/adminportfolio/adminportfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupbankerComponent,
     BkrloginComponent,
-    BkrportfolioComponent
+    BkrportfolioComponent,
+    AdminportfolioComponent
   ],
   imports: [
     BrowserModule,
