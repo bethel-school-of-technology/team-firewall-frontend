@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Bank } from 'src/app/models/bank';
 import { Banker } from 'src/app/models/banker';
 import { UserService } from 'src/app/services/user.service';
@@ -17,14 +16,14 @@ export class SignupbankerComponent implements OnInit {
   newBanker: Banker = new Banker();
   banks: Bank[] = [];
 
-  constructor(private UserService: UserService, private myRouter: Router) { }
+  constructor(private UserService: UserService) { }
 
 
 
   ngOnInit() {
       this.UserService.getBanks().subscribe(banks => {
         this.banks = banks;
-        console.log(banks)
+        console.log(banks);
       });
   }
 
@@ -32,12 +31,6 @@ export class SignupbankerComponent implements OnInit {
     console.log(this.newBanker, this.newBank);
     this.UserService.signupBankers(this.newBanker, this.newBank).subscribe(myResponseObject => {
       console.log(myResponseObject);
-      if(myResponseObject === 200) {
-        window.alert(myResponseObject.messsage);
-        this.myRouter.navigate(["login/banker"]);
-      } else {
-        window.alert(myResponseObject.message);
-      }
     });
   }
 
