@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Banker } from '../models/banker';
 import { Bank } from '../models/bank';
+import { Admin } from '../models/admin';
 
 
 @Injectable({
@@ -29,12 +30,30 @@ export class UserService {
     return this.myHttp.get(this.serverURL + "/findbanks");
   }
 
+  signupAdmins(newAdmin: Admin): Observable<any>{
+    var request = {
+      firstName: newAdmin.FirstName,
+      lastName: newAdmin.LastName,
+      email: newAdmin.Email,
+      password: newAdmin.Password
+    }
+    return this.myHttp.post(this.serverURL + "/signup/admin", request);
+  }
+
   loginBanker(email: string, password: string): Observable<any>{
     let bankerInfo = {
       email,
       password
     }
     return this.myHttp.post(this.serverURL + "/login/banker", bankerInfo);
+  }
+
+  loginAdmin(email: string, password: string): Observable<any>{
+    let adminInfo = {
+      email,
+      password
+    }
+    return this.myHttp.post(this.serverURL + "/login/admin", adminInfo);
   }
 
   getBankerPortfolio(): Observable<any>{
