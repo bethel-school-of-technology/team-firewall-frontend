@@ -11,6 +11,7 @@ import { BkrportfolioComponent } from './components/bkrportfolio/bkrportfolio.co
 import { AdminportfolioComponent } from './components/adminportfolio/adminportfolio.component';
 import { SignupadminComponent } from './components/signupadmin/signupadmin.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
     BkrportfolioComponent,
     AdminportfolioComponent,
     SignupadminComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
