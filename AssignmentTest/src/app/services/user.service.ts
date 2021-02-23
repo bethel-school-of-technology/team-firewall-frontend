@@ -14,8 +14,8 @@ export class UserService {
 
   constructor(private myHttp: HttpClient) { }
   serverURL: string = 'http://localhost:3000'
-  
-  signupBankers(newbanker: Banker, newBank: Bank): Observable<any>{
+
+  signupBankers(newbanker: Banker, newBank: Bank): Observable<any> {
     var request = {
       firstName: newbanker.FirstName,
       lastName: newbanker.LastName,
@@ -26,11 +26,11 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/signup/banker", request);
   }
 
-  getBanks(): Observable<any>{
+  getBanks(): Observable<any> {
     return this.myHttp.get(this.serverURL + "/findbanks");
   }
 
-  signupAdmins(newAdmin: Admin): Observable<any>{
+  signupAdmins(newAdmin: Admin): Observable<any> {
     var request = {
       firstName: newAdmin.FirstName,
       lastName: newAdmin.LastName,
@@ -40,7 +40,7 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/signup/admin", request);
   }
 
-  loginBanker(email: string, password: string): Observable<any>{
+  loginBanker(email: string, password: string): Observable<any> {
     let bankerInfo = {
       email,
       password
@@ -48,7 +48,7 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/login/banker", bankerInfo);
   }
 
-  loginAdmin(email: string, password: string): Observable<any>{
+  loginAdmin(email: string, password: string): Observable<any> {
     let adminInfo = {
       email,
       password
@@ -56,13 +56,38 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/login/admin", adminInfo);
   }
 
-  getBankerPortfolio(): Observable<any>{
-    authService: localStorage.getItem("vaultToken")
+  getBankerPortfolio(): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
     return this.myHttp.get(this.serverURL + "/portfolio/:id");
   }
 
-  getAdminPortfolio(): Observable<any>{
-    authService: localStorage.getItem("vaultToken")
-    return this.myHttp.get(this.serverURL + "portfolio/:id");
+  getBankers(): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + "/admin", { headers: abHeaders });
+  }
+
+  getAdminPortfolio(): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    return this.myHttp.get(this.serverURL + "/portfolio/:id");
+  }
+
+  addBank(newBank: Bank): Observable<any> {
+    var request = {
+      name: newBank.Name
+    }
+    return this.myHttp.post(this.serverURL + "/addbank", request);
   }
 }

@@ -4,6 +4,6 @@ export class Bank {
 
 
 constructor (){
-     this.Name="";
+     this.Name= "";
 }
 }

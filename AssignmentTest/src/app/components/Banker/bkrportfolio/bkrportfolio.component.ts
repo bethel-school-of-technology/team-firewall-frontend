@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Banker } from '../../models/banker';
-import { UserService } from '../../services/user.service';
+import { Banker } from '../../../models/banker';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-bkrportfolio',

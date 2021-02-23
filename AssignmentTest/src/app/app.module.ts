@@ -5,12 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupbankerComponent } from './components/signupbanker/signupbanker.component';
-import { BkrloginComponent } from './components/bkrlogin/bkrlogin.component';
-import { BkrportfolioComponent } from './components/bkrportfolio/bkrportfolio.component';
-import { AdminportfolioComponent } from './components/adminportfolio/adminportfolio.component';
-import { SignupadminComponent } from './components/signupadmin/signupadmin.component';
-import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { SignupbankerComponent } from './components/Banker/signupbanker/signupbanker.component';
+import { BkrloginComponent } from './components/Banker/bkrlogin/bkrlogin.component';
+import { BkrportfolioComponent } from './components/Banker/bkrportfolio/bkrportfolio.component';
+import { AdminportfolioComponent } from './components/Admin/adminportfolio/adminportfolio.component';
+import { SignupadminComponent } from './components/Admin/signupadmin/signupadmin.component';
+import { AdminloginComponent } from './components/Admin/adminlogin/adminlogin.component';
+import { AdminpageComponent } from './components/Admin/adminpage/adminpage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
     BkrportfolioComponent,
     AdminportfolioComponent,
     SignupadminComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    AdminpageComponent
   ],
   imports: [
     BrowserModule,
