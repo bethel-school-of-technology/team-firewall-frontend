@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-signupbanker',
   templateUrl: './signupbanker.component.html',
-  styleUrls: ['./signupbanker.component.css']
+  styleUrls: ['./signupbanker.component.scss']
 })
 export class SignupbankerComponent implements OnInit {
   

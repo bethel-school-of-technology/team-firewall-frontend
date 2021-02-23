@@ -5,7 +5,7 @@ import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-bkrportfolio',
   templateUrl: './bkrportfolio.component.html',
-  styleUrls: ['./bkrportfolio.component.css']
+  styleUrls: ['./bkrportfolio.component.scss']
 })
 export class BkrportfolioComponent implements OnInit {
 

@@ -6,7 +6,7 @@ import { UserService } from '../../../services/user.service';
 @Component({
   selector: 'app-adminportfolio',
   templateUrl: './adminportfolio.component.html',
-  styleUrls: ['./adminportfolio.component.css']
+  styleUrls: ['./adminportfolio.component.scss']
 })
 export class AdminportfolioComponent implements OnInit {
 

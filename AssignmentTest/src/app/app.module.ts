@@ -12,6 +12,7 @@ import { AdminportfolioComponent } from './components/Admin/adminportfolio/admin
 import { SignupadminComponent } from './components/Admin/signupadmin/signupadmin.component';
 import { AdminloginComponent } from './components/Admin/adminlogin/adminlogin.component';
 import { AdminpageComponent } from './components/Admin/adminpage/adminpage.component';
+import { TestscssComponent } from './component/testscss/testscss.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminpageComponent } from './components/Admin/adminpage/adminpage.compo
     AdminportfolioComponent,
     SignupadminComponent,
     AdminloginComponent,
-    AdminpageComponent
+    AdminpageComponent,
+    TestscssComponent
   ],
   imports: [
     BrowserModule,

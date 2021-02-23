@@ -6,7 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.component.html',
-  styleUrls: ['./adminlogin.component.css']
+  styleUrls: ['./adminlogin.component.scss']
 })
 export class AdminloginComponent implements OnInit {
 

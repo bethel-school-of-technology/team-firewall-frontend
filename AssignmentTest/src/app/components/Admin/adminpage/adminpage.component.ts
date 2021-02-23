@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-adminpage',
   templateUrl: './adminpage.component.html',
-  styleUrls: ['./adminpage.component.css']
+  styleUrls: ['./adminpage.component.scss']
 })
 export class AdminpageComponent implements OnInit {
 
