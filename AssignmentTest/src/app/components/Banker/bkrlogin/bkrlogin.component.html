@@ -1,0 +1,11 @@
+<h1>Banker Login</h1>
+<form (ngSubmit)= login()>
+<div>
+    <span>Email </span><br>
+    <input type="text" placeholder="Email" name="email" [(ngModel)]="bankerInfo.email"><br>
+ 
+    <span>Password </span><br>
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="bankerInfo.password"><br>
+    <button type="submit">Login</button>
+</div>
+</form>
