@@ -15,7 +15,9 @@ export class UserService {
   constructor(private myHttp: HttpClient) { }
   serverURL: string = 'http://localhost:3000'
 
+
   signupBankers(newbanker: Banker, newBank: Bank): Observable<any> {
+
     var request = {
       firstName: newbanker.FirstName,
       lastName: newbanker.LastName,
@@ -25,6 +27,8 @@ export class UserService {
     };
     return this.myHttp.post(this.serverURL + "/signup/banker", request);
   }
+
+
 
   getBanks(): Observable<any> {
     return this.myHttp.get(this.serverURL + "/findbanks");
@@ -89,5 +93,6 @@ export class UserService {
       name: newBank.Name
     }
     return this.myHttp.post(this.serverURL + "/addbank", request);
+
   }
 }
