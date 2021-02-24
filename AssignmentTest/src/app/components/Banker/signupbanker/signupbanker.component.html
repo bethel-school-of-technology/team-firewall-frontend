@@ -23,6 +23,7 @@
     <div>
         <span for="bank">Bank</span>
         <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
+            <option>--Please Select Bank--</option>
             <option *ngFor="let bank of banks">
                 {{bank.Name}}
             </option>

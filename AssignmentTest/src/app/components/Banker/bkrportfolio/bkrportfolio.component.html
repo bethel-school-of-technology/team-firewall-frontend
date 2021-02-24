@@ -1,2 +1,51 @@
 <h1>{{banker.bank.Name}}'s Portfolio</h1>
 
+<div>
+    <h3>Owned Loans</h3>
+    <ul *ngFor="let loan of loans" for="loans">
+        <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}} Amount: ${{loan.LoanAmmount}}
+            <div *ngIf="loan.ForSale == true; then dontsell else sell"></div>
+            <ng-template #dontsell><button (click)="dontSell(loan.LoanId)" class="btn">Dont Sell</button></ng-template>
+            <ng-template #sell><button (click)="sellLoan(loan.LoanId)" class="btn">Sell Loan</button></ng-template>
+            <button (click)="deleteLoan(loan.LoanId)" class="btn"> Loan Paid Off</button>
+        </li>
+    </ul>
+</div>
+<div>
+    <form (ngSubmit)='addLoan()'>
+        <div>
+            <span>First Name</span>
+            <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newLoan.FirstName">
+        </div>
+        <div>
+            <span>Last Name</span>
+            <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newLoan.LastName">
+        </div>
+        <div>
+            <span>Account Number</span>
+            <input placeholder="Account Number" type="text" name="accountNumber" [(ngModel)]="newLoan.AccountNumber">
+        </div>
+        <div>
+            <span>Loan Amount</span>
+            <input placeholder="Amount" type="text" name="amount" [(ngModel)]="newLoan.LoanAmmount">
+        </div>
+        <div>
+            <span>Address</span>
+            <input placeholder="Address" type="text" name="address" [(ngModel)]="newLoan.Address">
+        </div>
+        <div>
+            <button type="submit">
+                Add Loan
+            </button>
+        </div>
+    
+    </form>
+</div>
+<div>
+    <h3>
+        Employees
+    </h3>
+    <ol *ngFor="let banker of bankers" for="bankers">
+        <li id="bankers"> {{banker.FirstName}} {{banker.LastName}} </li>
+    </ol>
+</div>

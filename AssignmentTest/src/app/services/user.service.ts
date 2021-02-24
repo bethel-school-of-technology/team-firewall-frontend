@@ -98,7 +98,7 @@ export class UserService {
   }
 
   loansForSale(): Observable<any> {
-    authService: localStorage.getItem("vaultToken");
+    //authService: localStorage.getItem("vaultToken");
     let abHeaders = {
 
     }
@@ -166,7 +166,8 @@ export class UserService {
   return this.myHttp.get(this.serverURL + "/banker", {headers: abHeaders});}
 
   dontSell(id: number): Observable<any> {
-    authService: localStorage.getItem("vaultToken");
+
+    //authService: localStorage.getItem("vaultToken");
     let abHeaders = {
     }
     if (localStorage.getItem("vaultToken")) {
@@ -179,7 +180,7 @@ export class UserService {
         Authorization: ""
       }
     }
-    return this.myHttp.post(this.serverURL + `/unsellloan/${id}`, {headers: abHeaders});
+    return this.myHttp.post(this.serverURL + `/unsellloan/${id}`, {}, {headers: abHeaders});
   }
 
   buyLoan(id: number): Observable<any> {
@@ -196,7 +197,7 @@ export class UserService {
         Authorization: ""
       }
     }
-    return this.myHttp.post(this.serverURL + `/buyloan/${id}`, {headers: abHeaders});
+    return this.myHttp.post(this.serverURL + `/buyloan/${id}`, {}, {headers: abHeaders});
   }
 
   bankPortfolio(id: number): Observable<any> {
@@ -214,6 +215,82 @@ export class UserService {
       }
     }
     return this.myHttp.get(this.serverURL + `/portfolio/${id}`, {headers: abHeaders});
+  }
+
+  bankEmployees(id: number): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + `/employees/${id}`, {headers: abHeaders});
+  }
+
+  sellLoan(LoanId: number): Observable<any> {
+    //authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.post(this.serverURL + `/sellloan/${LoanId}`, {}, {headers: abHeaders});
+  }
+
+  deleteLoan(id: number): Observable<any> {
+    //authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.post(this.serverURL + `/deleteloan/${id}`, {}, {headers: abHeaders});
+  }
+
+  addLoan(newLoan: Loan): Observable<any> {
+    var request = {
+      firstName: newLoan.FirstName,
+      lastName: newLoan.LastName,
+      amount: newLoan.LoanAmmount,
+      address: newLoan.Address,
+      accountNumber: newLoan.AccountNumber
+    }
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.post(this.serverURL + "/addloan", request, {headers: abHeaders});
+
   }
 
 }

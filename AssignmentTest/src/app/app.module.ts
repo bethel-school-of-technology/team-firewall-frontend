@@ -16,6 +16,7 @@ import { HomepageComponent } from './components/Banker/homepage/homepage.compone
 import { LoanstobuyComponent } from './components/Banker/loanstobuy/loanstobuy.component';
 import { LoanstosellComponent } from './components/Banker/loanstosell/loanstosell.component';
 import { LoanpageComponent } from './components/Banker/loanpage/loanpage.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoanpageComponent } from './components/Banker/loanpage/loanpage.compone
     HomepageComponent,
     LoanstobuyComponent,
     LoanstosellComponent,
-    LoanpageComponent
+    LoanpageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
