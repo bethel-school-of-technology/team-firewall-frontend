@@ -1,16 +1,16 @@
-export class Bkrlogin {
+export class Admin {
+    AdminId!: number;
     FirstName: string;
     LastName: string;
-    Email: string;
     Password: string;
     AdminStatus: boolean;
-    BankerId!: number;
+    Email: string;
 
     constructor() {
         this.FirstName = "";
         this.LastName = "";
         this.Email = "";
         this.Password = "";
-        this.AdminStatus  = false;
+        this.AdminStatus  = true;
     }
 }

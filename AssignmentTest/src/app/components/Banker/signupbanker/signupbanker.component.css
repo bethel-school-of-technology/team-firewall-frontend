@@ -5,5 +5,7 @@ div {
     max-width: auto;
     height: 100px;
     text-align: center;
+}
+form {
     background-color: rgb(32, 200, 32);
 }

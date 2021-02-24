@@ -6,6 +6,7 @@ export class Banker {
     BankerId!: number;
     AdminStatus: boolean;
     BankId!: number;
+    bank!: {Name: string};
 
     constructor() {
         this.FirstName = "";

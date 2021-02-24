@@ -1,0 +1,37 @@
+<hr>
+<h3>
+    Banker Sign Up
+</h3>
+<hr>
+<form (ngSubmit)='signupBanker()'>
+    <div>
+        <span>First Name</span>
+        <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newBanker.FirstName">
+    </div>
+    <div>
+        <span>Last Name</span>
+        <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName">
+    </div>
+    <div>
+        <span>Email</span>
+        <input placeholder="Email" type="text" name="email" [(ngModel)]="newBanker.Email">
+    </div>
+    <div>
+        <span>Password</span>
+        <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newBanker.Password">
+    </div>
+    <div>
+        <span for="bank">Bank</span>
+        <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
+            <option *ngFor="let bank of banks">
+                {{bank.Name}}
+            </option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">
+            Sign Up
+        </button>
+    </div>
+
+</form>

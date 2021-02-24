@@ -1,0 +1,19 @@
+<h1>Admin Page</h1>
+<div>
+    <h2>Bankers</h2>
+    <div for>
+        <ul *ngFor="let banker of bankers" for="bankers">
+            <li id="bankers">{{banker.FirstName}} {{banker.LastName}} {{banker.bank.Name}}</li>
+        </ul>
+    </div>
+</div>
+<div>
+    <h2>Banks</h2>
+    <ul *ngFor="let bank of banks" for="banks">
+        <li id="banks">{{bank.Name}}</li>
+    </ul>
+    <form (ngSubmit)='addBank()'>
+        <input placeholder="New Bank" type="text" name="name" [(ngModel)]="newBank.Name"><button>Add Bank</button>
+    </form>
+    
+</div>
