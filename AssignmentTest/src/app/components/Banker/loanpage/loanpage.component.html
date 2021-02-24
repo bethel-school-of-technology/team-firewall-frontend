@@ -1,0 +1,9 @@
+<h1> {{currentLoan.FirstName}} {{currentLoan.LastName}}'s Loan</h1>
+<div>
+    <div>Loan Number: {{currentLoan.AccountNumber}}</div>
+    <div>Loan Amount: ${{currentLoan.LoanAmmount}}</div>
+    <div>Address: {{currentLoan.Address}}</div>
+    <div *ngIf="currentLoan.BankId == banker.BankId; then dontsell else buy"></div>
+    <ng-template #dontsell><button (click)="dontSell()" class="btn">Dont Sell</button></ng-template>
+    <ng-template #buy><button (click)="buyLoan()">Buy Loan</button></ng-template>
+</div>

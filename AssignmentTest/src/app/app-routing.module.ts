@@ -9,6 +9,11 @@ import { BkrloginComponent } from './components/Banker/bkrlogin/bkrlogin.compone
 import { SignupadminComponent } from './components/Admin/signupadmin/signupadmin.component';
 import { AdminloginComponent } from './components/Admin/adminlogin/adminlogin.component';
 import { AdminpageComponent } from './components/Admin/adminpage/adminpage.component';
+import { HomepageComponent } from './components/Banker/homepage/homepage.component';
+import { LoanstobuyComponent } from './components/Banker/loanstobuy/loanstobuy.component';
+import { LoanstosellComponent } from './components/Banker/loanstosell/loanstosell.component';
+import { LoanpageComponent } from './components/Banker/loanpage/loanpage.component';
+import { BkrportfolioComponent } from './components/Banker/bkrportfolio/bkrportfolio.component';
 //import { LoginAdminComponent } from './components/loginadmin/loginadmin.component';
 
 
@@ -21,9 +26,18 @@ const routes: Routes = [
   //Banker Login
   { path: "login/admin", component: AdminloginComponent },
   //Admin Login page
-  { path: "adminpage", component: AdminpageComponent }
+  { path: "adminpage", component: AdminpageComponent },
   //Admin Page
-  
+  { path: "homepage", component: HomepageComponent},
+  //Banker Home Page
+  { path: "loansforsale", component: LoanstobuyComponent},
+  //Buying Loans Page
+  { path: "loanstosell", component: LoanstosellComponent},
+  //Selling Loans Page
+  { path: "loan/:id", component: LoanpageComponent},
+  //Individual Loan Information
+  { path: "portfolio/:id", component: BkrportfolioComponent}
+  //Bank Portfolio Page
 
 ];
 

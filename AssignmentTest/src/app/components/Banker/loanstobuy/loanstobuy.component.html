@@ -1,0 +1,8 @@
+<h1>Loans To Purchase</h1>
+<div>
+    <ul *ngFor="let loan of loans" for="loans">
+        <li id="loans"><a routerLink="/loan/{{loan.LoanId}}"> Name: {{loan.FirstName}} {{loan.LastName}}</a>
+            Loan Amount: ${{loan.LoanAmmount}}
+            Bank: {{loan.bank.Name}} </li>
+    </ul>
+</div>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Banker } from '../models/banker';
 import { Bank } from '../models/bank';
 import { Admin } from '../models/admin';
+import { Loan } from '../models/loan';
 
 
 @Injectable({
@@ -95,4 +96,124 @@ export class UserService {
     return this.myHttp.post(this.serverURL + "/addbank", request);
 
   }
+
+  loansForSale(): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + "/loansforsale", {headers: abHeaders});
+  }
+
+  loansToSell(): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + "/loanstosell", {headers: abHeaders});
+  }
+
+  loanInfo(id: number): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + `/loan/${id}`, {headers: abHeaders});
+  }
+
+  getBanker(): Observable<any> {authService: localStorage.getItem("vaultToken");
+  let abHeaders = {
+  }
+  if (localStorage.getItem("vaultToken")) {
+    abHeaders = {
+      Authorization: localStorage.getItem("vaultToken")
+    }
+
+  } else {
+    abHeaders = {
+      Authorization: ""
+    }
+  }
+  return this.myHttp.get(this.serverURL + "/banker", {headers: abHeaders});}
+
+  dontSell(id: number): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.post(this.serverURL + `/unsellloan/${id}`, {headers: abHeaders});
+  }
+
+  buyLoan(id: number): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.post(this.serverURL + `/buyloan/${id}`, {headers: abHeaders});
+  }
+
+  bankPortfolio(id: number): Observable<any> {
+    authService: localStorage.getItem("vaultToken");
+    let abHeaders = {
+    }
+    if (localStorage.getItem("vaultToken")) {
+      abHeaders = {
+        Authorization: localStorage.getItem("vaultToken")
+      }
+
+    } else {
+      abHeaders = {
+        Authorization: ""
+      }
+    }
+    return this.myHttp.get(this.serverURL + `/portfolio/${id}`, {headers: abHeaders});
+  }
+
 }
