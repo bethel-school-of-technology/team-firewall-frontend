@@ -20,8 +20,11 @@ export class LoanpageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // let id = +this.route.snapshot.paramMap.get('id');
-    console.log(this.id)
+    if(!localStorage.getItem("vaultToken")){
+      window.alert("You are Not Logged In!");
+      this.router.navigate(["/login/banker"])
+    }else {
+      console.log(this.id)
     this.UserService.loanInfo(this.id).subscribe(myResponseObject => {
       console.log(myResponseObject);
       this.currentLoan = myResponseObject.loan;
@@ -30,6 +33,9 @@ export class LoanpageComponent implements OnInit {
     this.UserService.getBanker().subscribe(banker => {
       this.banker = banker
     })
+    }
+    // let id = +this.route.snapshot.paramMap.get('id');
+    
   }
 
   dontSell() {

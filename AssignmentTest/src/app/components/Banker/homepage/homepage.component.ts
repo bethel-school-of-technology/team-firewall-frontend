@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Banker } from 'src/app/models/banker';
 import { Loan } from 'src/app/models/loan';
 import { UserService } from 'src/app/services/user.service';
@@ -14,10 +15,14 @@ export class HomepageComponent implements OnInit {
   loanss: Loan[] = [];
   banker: Banker = new Banker();
 
-  constructor(private UserService: UserService) { }
+  constructor(private UserService: UserService, private myRouter: Router) { }
 
   ngOnInit(): void {
-    this.UserService.loansForSale().subscribe(loansp => {
+    if(!localStorage.getItem("vaultToken")){
+      window.alert("You are Not Logged In!");
+      this.myRouter.navigate(["/login/banker"])
+    } else {
+      this.UserService.loansForSale().subscribe(loansp => {
       this.loansp = loansp;
     });
 
@@ -28,6 +33,8 @@ export class HomepageComponent implements OnInit {
     this.UserService.getBanker().subscribe(banker => {
       this.banker = banker
     });
+    }
+    
   }
 
 }

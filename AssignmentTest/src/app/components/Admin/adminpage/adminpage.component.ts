@@ -18,7 +18,11 @@ export class AdminpageComponent implements OnInit {
   constructor(private UserService: UserService, private myRouter: Router) { }
 
   ngOnInit(): void {
-    this.UserService.getBanks().subscribe(banks => {
+    if(!localStorage.getItem("vaultToken")){
+      window.alert("You are Not Logged In!");
+      this.myRouter.navigate(["/login/banker"])
+    } else {
+      this.UserService.getBanks().subscribe(banks => {
       this.banks = banks;
       console.log(banks)
     });
@@ -27,6 +31,8 @@ export class AdminpageComponent implements OnInit {
       this.bankers = bankers;
       console.log(bankers)
     });
+    }
+    
   }
 
   addBank(){

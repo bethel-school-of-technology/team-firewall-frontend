@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Loan } from 'src/app/models/loan';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,13 +12,19 @@ export class LoanstosellComponent implements OnInit {
 
   loans: Loan[] = []
 
-  constructor(private UserService: UserService) { }
+  constructor(private UserService: UserService, private myRouter: Router) { }
 
   ngOnInit(): void {
-
-    this.UserService.loansToSell().subscribe(loans => {
+    if(!localStorage.getItem("vaultToken")){
+      window.alert("You are Not Logged In!");
+      this.myRouter.navigate(["/login/banker"])
+    } else{
+      this.UserService.loansToSell().subscribe(loans => {
       this.loans = loans
     })
+    }
+
+    
   }
 
 }

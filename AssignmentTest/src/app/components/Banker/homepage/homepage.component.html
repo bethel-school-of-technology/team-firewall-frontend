@@ -1,25 +1,37 @@
-<h1>Assignment Board</h1>
-<div>
-    <div>
-        <h3>Loans To Purchase</h3>
-        <ul *ngFor="let loan of loansp | slice:0:3" for="loans">
-            <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}}
-                Loan Amount: ${{loan.LoanAmmount}}
-                Bank: {{loan.bank.Name}}
-            </li>
-        </ul>
-        <a [routerLink]="['/loansforsale']"><button>All Loans</button></a>
+<div class="bg-gray-300 h-screen">
+    <div class="p-6 bg-gray-800 grid justify-items-stretch border-b border-black justify-center">
+        <h1 class="text-5xl font-sans text-white">Assignment Board</h1>
     </div>
-    <div>
-        <h3>Portfolio</h3>
-        <a routerLink="/portfolio/{{banker.BankId}}">{{banker.bank.Name}}'s Portfolio</a>
-    </div>
-    <div>
-        <h3>Loans to Sell</h3>
-        <ul *ngFor="let loan of loanss | slice:0:3" for="loans">
-            <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}}
-                Loan Amount: ${{loan.LoanAmmount}} </li>
-        </ul>
-        <a [routerLink]="['/loanstosell']"><button>All Loans</button></a>
+    <div class="grid grid-rows-1 flex justify-around justify-items-stretch md:grid-cols-3 md:grid-rows-3">
+        <div class="p-6">
+            <div class="border-double border-4 border-black rounded-md p-6 bg-green-100">
+                <h3>Loans To Purchase</h3>
+                <ul *ngFor="let loan of loansp | slice:0:3" for="loans">
+                    <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}}
+                        Loan Amount: ${{loan.LoanAmmount}}
+                        Bank: {{loan.bank.Name}}
+                    </li>
+                </ul>
+                <a [routerLink]="['/loansforsale']"><button class="border-black border rounded-md bg-green-300 hover:bg-green-600 hover:text-white px-2">All Loans</button></a>
+            </div>
+        </div>
+        <div class="p-6">
+            <div class=" p-6 justify-self-center bg-blue-100 border-double border-4 border-black rounded-md">
+                <h3>Portfolio</h3>
+                <a class="text-blue-500" routerLink="/portfolio/{{banker.BankId}}">{{banker.bank.Name}}'s Portfolio</a>
+            </div>
+        </div>
+
+        <div class="p-6">
+            <div class="border-double border-4 border-black rounded-md p-6 bg-red-100">
+                <h3>Loans to Sell</h3>
+                <ul *ngFor="let loan of loanss | slice:0:3" for="loans">
+                    <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}}
+                        Loan Amount: ${{loan.LoanAmmount}} </li>
+                </ul>
+                <a [routerLink]="['/loanstosell']"><button class="border-black border rounded-md bg-red-300 hover:bg-red-600 hover:text-white px-2">All Loans</button></a>
+            </div>
+        </div>
+
     </div>
 </div>
