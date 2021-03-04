@@ -18,6 +18,8 @@ import { BkrportfolioComponent } from './components/Banker/bkrportfolio/bkrportf
 
 
 const routes: Routes = [
+  { path: "", redirectTo: "login/banker", pathMatch: "full" },
+  //empty URL
   { path: "signup/banker", component: SignupbankerComponent },
   //Banker signup page
   { path: "signup/admin", component: SignupadminComponent },
@@ -36,8 +38,9 @@ const routes: Routes = [
   //Selling Loans Page
   { path: "loan/:id", component: LoanpageComponent},
   //Individual Loan Information
-  { path: "portfolio/:id", component: BkrportfolioComponent}
+  { path: "portfolio/:id", component: BkrportfolioComponent},
   //Bank Portfolio Page
+  { path: "**", redirectTo: "login/banker" }
 
 ];
 

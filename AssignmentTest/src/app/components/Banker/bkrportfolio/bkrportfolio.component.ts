@@ -22,7 +22,11 @@ export class BkrportfolioComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.UserService.bankPortfolio(this.id).subscribe(loans => {
+    if(!localStorage.getItem("vaultToken")){
+      window.alert("You are Not Logged In!");
+      this.router.navigate(["/login/banker"])
+    } else {
+      this.UserService.bankPortfolio(this.id).subscribe(loans => {
       this.loans = loans;
       console.log(loans)
     })
@@ -35,6 +39,8 @@ export class BkrportfolioComponent implements OnInit {
       this.bankers = bankers;
       console.log(bankers)
     })
+    }
+    
   }
 
   dontSell(LoanId: number){

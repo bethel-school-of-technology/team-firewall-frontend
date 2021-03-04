@@ -1,4 +1,4 @@
-<div >
+<div>
     <div id="navbar" class="fixed top-2 right-2 inline-block text-left">
         <div>
             <button type="button"
@@ -18,14 +18,15 @@
                 class="origin-top-right absolute justify-center mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                 <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu" id="dropdown">
                     <a href="homepage"
-                        class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem">Homepage</a>
                     <a href="loansforsale"
-                        class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem">Loans For Sale</a>
                     <a href="loanstosell"
-                        class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                         role="menuitem">Loans To Sell</a>
+                    <a *ngIf="getToken()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem"><button (click)="logout()" >Logout</button></a>
                 </div>
             </div>
         </div>
