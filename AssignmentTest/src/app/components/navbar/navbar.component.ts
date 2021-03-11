@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   toggleOn = true;
  
-  constructor() { }
+  constructor(private myRouter: Router) { }
 
   ngOnInit(): void {
     
@@ -20,6 +21,9 @@ export class NavbarComponent implements OnInit {
   
   logout(){
     localStorage.clear();
+    if(localStorage.getItem("vaultToken") === null){
+      this.myRouter.navigate(["login/banker"]);
+    }
   }
   
 }
