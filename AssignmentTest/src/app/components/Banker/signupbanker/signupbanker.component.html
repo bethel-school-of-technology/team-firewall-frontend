@@ -1,27 +1,28 @@
-<hr>
+
 <h3>
     Banker Sign Up
 </h3>
 <hr>
+
 <form (ngSubmit)='signupBanker()'>
     <div>
-        <span>First Name</span>
+        <label for ="firstName" class="title">First Name: </label>
         <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newBanker.FirstName">
     </div>
     <div>
-        <span>Last Name</span>
+        <label for="LastName" class="title">Last Name: </label>
         <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName">
     </div>
-    <div>
-        <span>Email</span>
+    <div>    
+        <label for="Email" class="title">Email: </label>
         <input placeholder="Email" type="text" name="email" [(ngModel)]="newBanker.Email">
-    </div>
-    <div>
-        <span>Password</span>
+   </div>
+   <div>
+        <label for="Password" class="title">Password: </label>
         <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newBanker.Password">
     </div>
-    <div>
-        <span for="bank">Bank</span>
+    <div>  
+        <span for="bank" class="title">Bank: </span>
         <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
             <option>--Please Select Bank--</option>
             <option *ngFor="let bank of banks">
@@ -30,9 +31,6 @@
         </select>
     </div>
     <div>
-        <button type="submit">
-            Sign Up
-        </button>
+        <input type="submit" value="SignUp" class="submit"/> 
     </div>
-
 </form>
