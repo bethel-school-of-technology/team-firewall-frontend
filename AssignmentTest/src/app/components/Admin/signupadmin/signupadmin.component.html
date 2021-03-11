@@ -14,14 +14,22 @@
     </div>
     <div>
         <span>Email</span>
-        <input placeholder="Email" type="text" name="email" [(ngModel)]="newAdmin.Email">
+        <input placeholder="Email" type="text" name="email" [(ngModel)]="newAdmin.Email" id="email" [pattern]="emailPattern" #eml="ngModel" required>
+        <div *ngIf="eml.touched &amp;&amp; eml.invalid" class="text-red-400">
+            <div *ngIf="eml.errors?.required">Email is required.</div>
+            <div *ngIf="eml.errors?.pattern">Please, enter valid email address.</div>
+        </div>
     </div>
     <div>
         <span>Password</span>
-        <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newAdmin.Password">
+        <input placeholder="Enter Password" type="password" name="password" [(ngModel)]="newAdmin.Password" id="password" [pattern]="pwdPattern" #pwd="ngModel" required>
+        <div *ngIf="pwd.touched &amp;&amp; pwd.invalid" class="text-red-400">
+            <div *ngIf="pwd.errors?.required">Password is required.</div>
+            <div *ngIf="pwd.errors?.pattern">Password must contain at least one lowercase letter, one uppercase letter, one number and one special character, between 8 and 12 characters long</div>
+        </div>
     </div>
     <div>
-        <button type="submit">
+        <button type="submit" [disabled]="!pwd.valid || !eml.valid">
             Sign Up
         </button>
     </div>

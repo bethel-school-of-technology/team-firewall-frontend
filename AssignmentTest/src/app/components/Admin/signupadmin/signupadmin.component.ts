@@ -11,6 +11,8 @@ import { UserService } from 'src/app/services/user.service';
 export class SignupadminComponent implements OnInit {
 
   newAdmin: Admin = new Admin();
+  pwdPattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
   constructor(private UserService: UserService, private myRouter: Router) { }
 
