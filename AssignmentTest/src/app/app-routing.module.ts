@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, ɵCompiler_compileModuleAsync__POST_R3__ } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { LoanstobuyComponent } from './components/Banker/loanstobuy/loanstobuy.c
 import { LoanstosellComponent } from './components/Banker/loanstosell/loanstosell.component';
 import { LoanpageComponent } from './components/Banker/loanpage/loanpage.component';
 import { BkrportfolioComponent } from './components/Banker/bkrportfolio/bkrportfolio.component';
+import { AboutusComponent } from './components/navbar/aboutus/aboutus.component';
 //import { LoginAdminComponent } from './components/loginadmin/loginadmin.component';
 
 
@@ -40,7 +41,13 @@ const routes: Routes = [
   //Individual Loan Information
   { path: "portfolio/:id", component: BkrportfolioComponent},
   //Bank Portfolio Page
+<<<<<<< Updated upstream
   { path: "**", redirectTo: "login/banker" }
+=======
+  { path: "aboutus", component: AboutusComponent },
+  //About Us Page
+  
+>>>>>>> Stashed changes
 
 ];
 
