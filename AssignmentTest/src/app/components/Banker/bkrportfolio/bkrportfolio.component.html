@@ -1,52 +1,85 @@
-<h1>{{banker.bank.Name}}'s Portfolio</h1>
+<div class="grad bg-scroll h-screen">
+    <div class="p-6 bg-gray-800 border-b border-black">
+        <div class="flex justify-center">
+            <div class="shadow-sm bg-gray-100 absolute top-5 left-5 p-2 rounded-full">
+                <img class="flex justify-center w-10 h-10" src="assets/images/Tack1.ico">
+            </div>
+            <div class="justify-center">
+                <h1 class="text-5xl font-sans text-white">{{banker.bank.Name}}'s Portfolio</h1>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 ">
+        <div class="p-6 flex justify-center">
+            <div class="border-double border-4 border-black rounded-md p-6 bg-blue-100">
+                <p class="font-semibold flex justify-center text-xl font-sans">Owned Loans</p>
+                <ul *ngFor="let loan of loans" class="pb-4 flex justify-center" for="loans">
+                    <li id="loans"><p class="">Trustee: </p>{{loan.FirstName}} {{loan.LastName}} <p>Amount: </p>${{loan.LoanAmmount}}
+                        <div *ngIf="loan.ForSale == true; then dontsell else sell"></div>
+                        <ng-template #dontsell><button class="bg-gray-200 " (click)="dontSell(loan.LoanId)"
+                                class="btn px-2 mx-4 ring ring-gray-400 ring-opacity-50 shadow-lg bg-blue-300 hover:bg-blue-600 hover:text-white rounded-md">Dont
+                                Sell
+                            </button></ng-template>
+                        <ng-template #sell><button class="bg-green-200" (click)="sellLoan(loan.LoanId)" class="btn mx-4 px-2 shadow-lg ring ring-gray-400 ring-opacity-50 bg-green-300 hover:bg-green-600 hover:text-white rounded-md">Sell
+                                Loan
+                            </button></ng-template>
+                        <button (click)="deleteLoan(loan.LoanId)" class="btn ring ring-gray-400 ring-opacity-50  shadow-lg px-2 bg-red-400 hover:bg-red-600 hover:text-white rounded-md"> Loan Paid Off</button>
+                    </li>
+                </ul>
+                <button class="px-2 ring ring-gray-400 ring-opacity-50 bg-gray-800 text-white hover:bg-gray-300 hover:text-black rounded-md" (click)="toggleOn =!toggleOn">Add Loan Form</button>
+            </div>
+        </div>
 
-<div>
-    <h3>Owned Loans</h3>
-    <ul *ngFor="let loan of loans" for="loans">
-        <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}} Amount: ${{loan.LoanAmmount}}
-            <div *ngIf="loan.ForSale == true; then dontsell else sell"></div>
-            <ng-template #dontsell><button class="bg-gray-200 " (click)="dontSell(loan.LoanId)" class="btn">Dont Sell </button></ng-template>
-            <ng-template #sell><button class="bg-green-200" (click)="sellLoan(loan.LoanId)" class="btn">Sell Loan </button></ng-template>
-            <button (click)="deleteLoan(loan.LoanId)" class="btn"> Loan Paid Off</button>
-        </li>
-    </ul>
-    <button  (click)="toggleOn =!toggleOn">Add Loan Form</button>
-</div>
-<div *ngIf="!toggleOn">
-    <form (ngSubmit)='addLoan()'>
-        <div>
-            <span>First Name</span>
-            <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newLoan.FirstName">
+
+        <div class="p-6 flex justify-center">
+            <div class=" px-24 py-6 justify-self-center bg-blue-100 border-double border-4 border-black rounded-md">
+                <p class="font-semibold flex justify-center text-xl font-sans">
+                    Employees
+                </p>
+                <ol *ngFor="let banker of bankers" class="flex justify-center" for="bankers">
+                    <li id="bankers"> {{banker.FirstName}} {{banker.LastName}} </li>
+                </ol>
+            </div>
+
         </div>
-        <div>
-            <span>Last Name</span>
-            <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newLoan.LastName">
+    </div>
+    <div *ngIf="!toggleOn">
+        <div class="p-6 flex justify-center ">
+            <div class="px-6 bg-gray-200 rounded-md border-double border-4 border-black rounded-md py-6 px-24 col-span-2">
+                <form (ngSubmit)='addLoan()'>
+                    <div class="flex justify-center">
+                        <p class="font-semibold flex justify-center text-xl font-sans">Add a New Loan</p>
+                    </div>
+                    <div class="pt-3 pb-3">
+                        <span>First Name:</span><br>
+                        <input placeholder="First Name" class=" rounded-md" type="text" name="firstName" [(ngModel)]="newLoan.FirstName">
+                    </div>
+                    <div class="pb-3">
+                        <span>Last Name:</span><br>
+                        <input placeholder="Last Name" class=" rounded-md" type="text" name="lastName" [(ngModel)]="newLoan.LastName">
+                    </div>
+                    <div class="pb-3">
+                        <span>Account Number:</span><br>
+                        <input placeholder="Account Number" type="text" class=" rounded-md" name="accountNumber"
+                            [(ngModel)]="newLoan.AccountNumber">
+                    </div>
+                    <div class="pb-3">
+                        <span>Loan Amount:</span><br>
+                        <input placeholder="Amount" class=" rounded-md" type="text" name="amount" [(ngModel)]="newLoan.LoanAmmount">
+                    </div>
+                    <div class="pb-3">
+                        <span>Address:</span><br>
+                        <input placeholder="Address" class=" rounded-md" type="text" name="address" [(ngModel)]="newLoan.Address">
+                    </div>
+                    <div>
+                        <button class="px-2 ring ring-gray-400 ring-opacity-50 bg-gray-800 text-white hover:bg-gray-300 hover:text-black rounded-md" type="submit">
+                            Add Loan
+                        </button>
+                    </div>
+
+                </form>
+            </div>
         </div>
-        <div>
-            <span>Account Number</span>
-            <input placeholder="Account Number" type="text" name="accountNumber" [(ngModel)]="newLoan.AccountNumber">
-        </div>
-        <div>
-            <span>Loan Amount</span>
-            <input placeholder="Amount" type="text" name="amount" [(ngModel)]="newLoan.LoanAmmount">
-        </div>
-        <div>
-            <span>Address</span>
-            <input placeholder="Address" type="text" name="address" [(ngModel)]="newLoan.Address">
-        </div>
-        <div>
-            <button type="submit">
-                Add Loan
-            </button>
-        </div>
-    
-    </form>
-</div>
-<div>
-    <h3>
-        Employees
-    </h3>
-    <ol *ngFor="let banker of bankers" for="bankers">
-        <li id="bankers"> {{banker.FirstName}} {{banker.LastName}} </li>
-    </ol>
+    </div>
+
 </div>

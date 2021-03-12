@@ -1,52 +1,59 @@
-<div class="bg-blue-200 h-screen">
+<div class="grad h-screen">
     <div class="p-6 bg-gray-800 grid justify-items-stretch border-b border-black">
-        <div class="justify-self-center">
-            <h1 class="text-5xl font-sans text-white">Banker SignUp</h1>
+        <div class="flex justify-center">
+            <div class="shadow-sm bg-blue-100 absolute top-5 left-5 p-2 rounded-full">
+                <img class="flex justify-center w-10 h-10" src="assets/images/Tack1.ico">
+            </div>
+            <div class="justify-center">
+                <h1 class="text-5xl font-sans text-white">Banker SignUp</h1>
+            </div>
+            
         </div>
     </div>
-    <div class="pt-6 px-6 flex justify-center">
-        <form (ngSubmit)=signupBanker() class="border-double border-4 border-blue-500 px-4 bg-gray-200 rounded-md">
+    <div class="pt-6 px-6 flex justify-center grid grid-rows-1">
+        <form (ngSubmit)=signupBanker() class="border-double border-4 border-black px-6 bg-gray-200 rounded-md">
             <div class="pt-3">
-        <label for ="firstName" class="title">First Name: </label>
-        <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newBanker.FirstName">
-    </div>
-    <div>
-        <label for="LastName" class="title">Last Name: </label>
-        <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName">
-          </div>
-    <div>
-        <label for="email" class="title">Email</label>
-        <input placeholder=" Email"  id="email" type="text"  name="email" [pattern]="emailPattern" #eml="ngModel"
-            [(ngModel)]="newBanker.Email" required>
-        <div *ngIf="eml.touched &amp;&amp; eml.invalid" class="text-red-400">
-            <div *ngIf="eml.errors?.required">Email is required.</div>
-            <div *ngIf="eml.errors?.pattern">Please, enter valid email address.</div>
-        </div>
-    </div>
-    <div >
-        <label for="password" class="title">Password</label>
-            <input placeholder="Enter Password" class="rounded-md" type="password" id="password" [pattern]="pwdPattern" #pwd="ngModel"
-                 name="password" [(ngModel)]="newBanker.Password" required>
+                <span for="firstName" class="title">First Name: </span><br>
+                <input placeholder="First Name" type="text" name="firstName" [(ngModel)]="newBanker.FirstName">
+            </div>
+            <div class="pb-2">
+                <span for="LastName" class="title">Last Name: </span><br>
+                <input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="newBanker.LastName">
+            </div>
+            <div class="pb-3">
+                <span for="email" class="title">Email: </span><br>
+                <input placeholder=" Email" id="email" type="text" name="email" [pattern]="emailPattern" #eml="ngModel"
+                    [(ngModel)]="newBanker.Email" required>
+                <div *ngIf="eml.touched &amp;&amp; eml.invalid" class="text-red-400">
+                    <div *ngIf="eml.errors?.required">Email is required.</div>
+                    <div *ngIf="eml.errors?.pattern">Please, enter valid email address.</div>
+                </div>
+            </div>
+            <div class="pb-3">
+                <span for="password" class="title">Password: </span><br>
+                <input placeholder="Enter Password" class="rounded-md" type="password" id="password"
+                    [pattern]="pwdPattern" #pwd="ngModel" name="password" [(ngModel)]="newBanker.Password" required>
                 <div *ngIf="pwd.touched &amp;&amp; pwd.invalid" class="text-red-400">
                     <div *ngIf="pwd.errors?.required">Password is required.</div>
-                    <div *ngIf="pwd.errors?.pattern">Password must contain at least one lowercase letter, one uppercase letter, one number and one special character, between 8 and 12 characters long</div>
+                    <div *ngIf="pwd.errors?.pattern">Password must contain at least one lowercase letter, one uppercase
+                        letter, one number and one special character, between 8 and 12 characters long</div>
                 </div>
-    </div>
-    <div>
-        <span for="bank" class="title">Bank</span>
-        <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
-            <option>--Please Select Bank--</option>
-            <option *ngFor="let bank of banks">
-                {{bank.Name}}
-            </option>
-        </select>
-    </div>
+            </div>
+            <div class="pb-3">
+                <span for="bank" class="title">Bank: </span><br>
+                <select id="bank" name="bankName" [(ngModel)]="newBank.Name">
+                    <option>--Please Select Bank--</option>
+                    <option *ngFor="let bank of banks">
+                        {{bank.Name}}
+                    </option>
+                </select>
+            </div>
 
-    <divclass="pb-3">
-        <button type="submit" class=" px-2 bg-gray-400 hover:bg-gray-600 hover:text-white rounded-md" [disabled]="!pwd.valid || !eml.valid">
-            Sign Up
-        </button>
-    </div>
+            <div class="flex justify-end pb-3">
+                <button type="submit" class="px-2 py-1 bg-gray-400 hover:bg-gray-600 hover:text-white rounded-md"
+                    [disabled]="!pwd.valid || !eml.valid">
+                    Sign Up
+                </button>
+            </div>
 
-</form>
-
+        </form>

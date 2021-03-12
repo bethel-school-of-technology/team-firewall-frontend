@@ -1,4 +1,4 @@
-<div class="bg-blue-200 h-screen">
+<div class="grad h-screen">
 
     <div class="p-6 bg-gray-800 border-b border-black">
         <div class="flex justify-center">
@@ -12,7 +12,7 @@
 
     </div>
     <div class="pt-6 px-6 flex justify-center grid grid-rows-1">
-        <form (ngSubmit)=login() class="border-double border-4 border-blue-500 px-4 bg-gray-200 rounded-md">
+        <form (ngSubmit)=login() class="border-double border-4 border-black px-4 bg-gray-200 rounded-md">
             <div class="pt-3">
                 <span>Email </span><br>
                 <input class=" rounded-md" type="text" placeholder="Email" name="email" [(ngModel)]="bankerInfo.email">
@@ -22,8 +22,8 @@
                 <input class="rounded-md" type="password" placeholder="Password" name="password"
                     [(ngModel)]="bankerInfo.password">
             </div>
-            <div class="pb-3">
-                <button class=" px-2 bg-gray-400 hover:bg-gray-600 hover:text-white rounded-md"
+            <div class="flex justify-end pb-3">
+                <button class=" px-2 py-1 bg-gray-400 hover:bg-gray-600 hover:text-white rounded-md"
                     type="submit">Login</button>
             </div>
         </form>
