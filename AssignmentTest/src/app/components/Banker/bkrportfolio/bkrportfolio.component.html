@@ -5,13 +5,14 @@
     <ul *ngFor="let loan of loans" for="loans">
         <li id="loans"> Name: {{loan.FirstName}} {{loan.LastName}} Amount: ${{loan.LoanAmmount}}
             <div *ngIf="loan.ForSale == true; then dontsell else sell"></div>
-            <ng-template #dontsell><button (click)="dontSell(loan.LoanId)" class="btn">Dont Sell</button></ng-template>
-            <ng-template #sell><button (click)="sellLoan(loan.LoanId)" class="btn">Sell Loan</button></ng-template>
+            <ng-template #dontsell><button class="bg-gray-200 " (click)="dontSell(loan.LoanId)" class="btn">Dont Sell </button></ng-template>
+            <ng-template #sell><button class="bg-green-200" (click)="sellLoan(loan.LoanId)" class="btn">Sell Loan </button></ng-template>
             <button (click)="deleteLoan(loan.LoanId)" class="btn"> Loan Paid Off</button>
         </li>
     </ul>
+    <button  (click)="toggleOn =!toggleOn">Add Loan Form</button>
 </div>
-<div>
+<div *ngIf="!toggleOn">
     <form (ngSubmit)='addLoan()'>
         <div>
             <span>First Name</span>
