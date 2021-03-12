@@ -12,6 +12,7 @@ import { UserService } from '../../../services/user.service';
 export class BkrportfolioComponent implements OnInit {
 
   id: number;
+  toggleOn = true;
   newLoan: Loan = new Loan();
   banker: Banker = new Banker();
   loans: Loan[] = [];
