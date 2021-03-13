@@ -16,8 +16,8 @@
         <span for="firstName">First Name:</span><br>
         <input placeholder="First Name" class="rounded-md " type="text" name="firstName" [(ngModel)]="newAdmin.FirstName">
     </div>
-    <div class="pb-2  ">
-        <span for="LastName" class="title">Last Name:</span>
+    <div class="pb-2  pt-2">
+        <span for="LastName" class="title">Last Name:</span><br>
         <input placeholder="Last Name" class="rounded-md" type="text" name="lastName" [(ngModel)]="newAdmin.LastName">
     </div>
     <div class="pb-3 ">
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="pb-3">
-        <span for="password" class="title">Password:</span>
+        <span for="password" class="title">Password:</span><br>
         <input placeholder="Enter Password" class="rounded-md" type="password" name="password" [(ngModel)]="newAdmin.Password" id="password" [pattern]="pwdPattern" #pwd="ngModel" required>
         <div *ngIf="pwd.touched &amp;&amp; pwd.invalid" class="text-red-400">
             <div *ngIf="pwd.errors?.required">Password is required.</div>

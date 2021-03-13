@@ -1,4 +1,4 @@
-<div class="grad bg-scroll h-screen">
+<div class="grad bg-auto bg-fixed h-screen">
     <div class="p-6 bg-gray-800 border-b border-black">
         <div class="flex justify-center">
             <div class="shadow-sm bg-gray-100 absolute top-5 left-5 p-2 rounded-full">
@@ -14,16 +14,16 @@
             <div class="border-double border-4 border-black rounded-md p-6 bg-blue-100">
                 <p class="font-semibold flex justify-center text-xl font-sans">Owned Loans</p>
                 <ul *ngFor="let loan of loans" class="pb-4 flex justify-center" for="loans">
-                    <li id="loans"><p class="">Trustee: </p>{{loan.FirstName}} {{loan.LastName}} <p>Amount: </p>${{loan.LoanAmmount}}
+                    <li id="loans">Trustee: {{loan.FirstName}} {{loan.LastName}} <br>Amount: ${{loan.LoanAmmount}}
                         <div *ngIf="loan.ForSale == true; then dontsell else sell"></div>
                         <ng-template #dontsell><button class="bg-gray-200 " (click)="dontSell(loan.LoanId)"
-                                class="btn px-2 mx-4 ring ring-gray-400 ring-opacity-50 shadow-lg bg-blue-300 hover:bg-blue-600 hover:text-white rounded-md">Dont
+                                class="btn px-2 mx-4 ring ring-gray-400 ring-opacity-50 shadow-lg bg-blue-200 hover:bg-blue-400 hover:text-white rounded-md">Dont
                                 Sell
                             </button></ng-template>
-                        <ng-template #sell><button class="bg-green-200" (click)="sellLoan(loan.LoanId)" class="btn mx-4 px-2 shadow-lg ring ring-gray-400 ring-opacity-50 bg-green-300 hover:bg-green-600 hover:text-white rounded-md">Sell
+                        <ng-template #sell><button class="bg-green-200" (click)="sellLoan(loan.LoanId)" class="btn mx-4 px-2 shadow-lg ring ring-gray-400 ring-opacity-50 bg-green-200 hover:bg-green-400 hover:text-white rounded-md">Sell
                                 Loan
                             </button></ng-template>
-                        <button (click)="deleteLoan(loan.LoanId)" class="btn ring ring-gray-400 ring-opacity-50  shadow-lg px-2 bg-red-400 hover:bg-red-600 hover:text-white rounded-md"> Loan Paid Off</button>
+                        <button (click)="deleteLoan(loan.LoanId)" class="btn ring ring-gray-400 ring-opacity-50  shadow-lg px-2 bg-red-200 hover:bg-red-400 hover:text-white rounded-md"> Loan Paid Off</button>
                     </li>
                 </ul>
                 <button class="px-2 ring ring-gray-400 ring-opacity-50 bg-gray-800 text-white hover:bg-gray-300 hover:text-black rounded-md" (click)="toggleOn =!toggleOn">Add Loan Form</button>
