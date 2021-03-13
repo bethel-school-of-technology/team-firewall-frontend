@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AdminpageComponent implements OnInit {
 
+  toggleOn = true;
   banks: Bank[] = [];
   bankers: Banker[] = [];
   newBank: Bank = new Bank;

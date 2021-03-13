@@ -13,13 +13,14 @@
         </div>
     </div>
     <div class="pt-6 px-6 flex justify-center grid grid-rows-1">
-        <div class="border-double border-4 border-black p-4 bg-gray-200 rounded-md">
+        <div class="px-24 py-6 justify-self-center bg-gray-200 border-double border-4 border-black rounded-md">
+            <p class="font-semibold flex justify-center text-xl font-sans">Loan Information</p>
             <div>Loan Number: {{currentLoan.AccountNumber}}</div>
             <div>Loan Amount: ${{currentLoan.LoanAmmount}}</div>
             <div class="pb-2">Address: {{currentLoan.Address}}</div>
             <div *ngIf="currentLoan.BankId == banker.BankId; then sell else buy"></div>
-            <ng-template #sell><button (click)="sellLoan()" class="btn bg-gray-400 rounded-md px-1 hover:bg-gray-800 hover:text-white">Sell Loan</button></ng-template>
-            <ng-template #buy><button class="btn bg-green-400 rounded-md px-1 hover:bg-green-800 hover:text-white" (click)="buyLoan()">Buy Loan</button></ng-template>
+            <ng-template #sell><button (click)="sellLoan()" class="px-2 ring ring-gray-400 ring-opacity-50 bg-blue-200 hover:bg-blue-400 hover:text-white rounded-md flex justify-end">Sell Loan</button></ng-template>
+            <ng-template #buy><button class="px-2 ring ring-gray-400 ring-opacity-50 bg-green-200 hover:bg-green-400 hover:text-white rounded-md flex justify-end" (click)="buyLoan()">Buy Loan</button></ng-template>
         </div>
     </div>
 </div>

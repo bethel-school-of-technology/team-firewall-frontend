@@ -25,7 +25,6 @@ export class AdminloginComponent implements OnInit {
     this.UserService.loginAdmin(this.adminInfo.email, this.adminInfo.password).subscribe(myResponseObject => {
       console.log(myResponseObject);
       if(myResponseObject.status === 200){
-        window.alert(myResponseObject.message);
         localStorage.setItem("vaultToken", myResponseObject.token);
         this.myRouter.navigate(["adminpage"])
       } else {
